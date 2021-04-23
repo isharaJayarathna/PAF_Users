@@ -76,12 +76,7 @@ public class UserResource {
 			String UMail = UserObject.get("UMail").getAsString();
 			String UserRole = UserObject.get("UserRole").getAsString();
 			String UPassword = UserObject.get("UPassword").getAsString();
-			/*String FundId = Object.get("FundId").getAsString();
-			String FundingAgency = FundObject.get("FundingAgency").getAsString();
-			String FAddress = FundObject.get("FAddress").getAsString();
-			String FPhone = FundObject.get("FPhone").getAsString();
-			String FProjectID = FundObject.get("FProjectID").getAsString();
-			String Fund = FundObject.get("Fund").getAsString();*/
+			
 
 			UsersService UserObject1 = new UsersService();
 			
@@ -93,13 +88,7 @@ public class UserResource {
 			UserObj.setUserRole(UserRole);
 			UserObj.setUPassword(UPassword);
 
-			/*FundObj.setFundId(FundId);
-			FundObj.setFundingAgency(FundingAgency);
-			FundObj.setFAddress(FAddress);
-			FundObj.setFPhone(FPhone);
-			FundObj.setFProjectID(FProjectID);
-			FundObj.setFund(Fund);*/
-
+			
 			String output = UserObject1.updateUsers(UserObj);
 			return output;
 		}

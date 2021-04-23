@@ -52,7 +52,9 @@ Connection con = null;
 	 if (con == null)
 	 {return "Error while connecting to the database for reading."; }
 	 // Prepare the html table to be displayed
-	 output = "<table border=\"1\"><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Mail</th><th>User Role</th></tr><th>Pass Word</th></tr>";
+	 //output = "<table border=\"1\"><tr><th>Fund ID</th><th>Funding Agency</th><th>Address</th><th>Phone</th><th>Prject ID</th><th>Fund Amount</th></tr>";
+	 
+	 output = "<table border=\"1\"><tr><th>User ID</th><th>First Name</th><th>Last Name</th><th>Phone</th><th>Mail</th><th>User Role</th><th>Pass Word</th></tr>";
 	 String query = "select * from Users";
 	 Statement stmt = con.createStatement();
 	 ResultSet rs = stmt.executeQuery(query);
@@ -108,12 +110,7 @@ Connection con = null;
 		preparedStatement.setString(5, Users.getUMail());
 		preparedStatement.setString(6, Users.getUserRole()); 
 		preparedStatement.setString(7, Users.getUPassword()); 
-		/*preparedStatement.setString(1, Funds.getFundingAgency());
-		preparedStatement.setString(2, Funds.getFAddress());
-		preparedStatement.setString(3, Funds.getFPhone());
-		preparedStatement.setString(4, Funds.getFProjectID());
-		preparedStatement.setString(5, Funds.getFund()); 
-		preparedStatement.setString(6, Funds.getFundId());*/
+		
 		
 		
 		preparedStatement.execute();
